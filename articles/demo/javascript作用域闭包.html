@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var foo = (function() {
+      return {
+        num: 1
+      }
+    })();
+    var c_num1 = foo.num;
+    var c_num2 = foo.num;
+    ++c_num1;
+    ++c_num2;
+    console.log(foo.num, c_num1, c_num2)
+
+    //现代的模块机制
+    var MyModules = (function Manager() {
+      var modules = {};
+
+      function define(name, deps, impt) {
+        for (var i = 0; i < deps.length; i++) {
+          deps[i] = modules[deps[i]]
+        }
+        modules[name] = impt.apply(impt, deps); // 调用了本身
+      }
+
+      function get(name) {
+        return modules[name]
+      }
+      return {
+        define: define,
+        get: get
+      }
+    })();
+    MyModules.define('bar', [], function() {
+      function hello(who) {
+        return 'I am ' + who
+      }
+      return {
+        hello: hello
+      }
+    })
+    MyModules.define('foo', ['bar'], function() {
+      var hungry = 'hippo'
+
+      function awesome() {
+        console.log(bar.hello(hungry).toUpperCase())
+      }
+      return {
+        awesome: awesome
+      }
+    })
+    var bar = MyModules.get('bar');
+    var foo = MyModules.get('foo');
+    console.log(bar.hello('bobo'));
+    foo.awesome()
+  </script>
+</body>
+
+</html>
