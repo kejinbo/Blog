@@ -6,58 +6,58 @@
 
 ## 操作数组
 
-- `Array.prototype.map()`
+- `Array.prototype.map()`  
   此方法创建一个新数组，其结果是该数组中的每一个元素调用一次提供的函数后的返回值。**不改变原来的数组，返回新数组**
 
-- `Array.prototype.forEach()`
+- `Array.prototype.forEach()`  
   此方法给每个元素执行一次给定的函数，与`map()`或者`reduce()`不同的是。它总是返回`undefined`。**不会改变原数组，但可那个对象（调用它的数组）可能会被callback函数改变，无法终止或跳出循环**
 
-- `Array.prototype.filter()`
+- `Array.prototype.filter()`  
   此方法创建一个数组，其包含通过所提供函数实现的测试的所有元素。**不改变原来的数组，返回新数组**
 
-- `Array.prototype.every()`
+- `Array.prototype.every()`  
   此方法dui 所有元素进行判断返回一个布尔值，全部元素满足判断条件，则返回true，否则返回false。**不改变原数组，返回布尔值。注意：若收到一个空数组，此方法在任何情况下都会返回true**
 
-- `Array.prototype.some()`
+- `Array.prototype.some()`  
   此方法将所有元素进行判断返回一个布尔值，有一个元素满足条件，则返回true，全部不满足返回false。**不改变原数组，返回布尔值。注意：如果收到一个空数组，此方法在任何情况下都会返回false**
 
-- `Array.prototype.reduce()`
+- `Array.prototype.reduce()`  
   此方法是所有元素调用返回函数，返回值为最后结果，传入的值必须是函数类型。**不改变原数组**
 
-- `Array.prototype.push()`
+- `Array.prototype.push()`  
   此方法是在数组后面添加新元素。**改变原数组，返回数组长度。**
 
-- `Array.prototype.pop()`
+- `Array.prototype.pop()`  
   该方法移除数组最后一个元素。**改变原数组，返回原来的元素。**
 
-- `Array.prototype.shift()`
+- `Array.prototype.shift()`  
   此方法移除数组第一个元素。**改变原数组，返回移除的元素。**
 
-- `Array.prototype.unshift()`
+- `Array.prototype.unshift()`  
   此方法是将一个或多个元素添加到数组的开头。**改变原数组，返回数组长度。**
 
-- `Array.isArray()`
-   判断一个对象是不是数组。**返回布尔值。**
+- `Array.isArray()`  
+  判断一个对象是不是数组。**返回布尔值。**
 
-- `Array.prototype.concat()`
+- `Array.prototype.concat()`  
   此方法是一个拼接两个数组。**不会改变原数组。返回新数组，其值为拼接好的值**
 
-- `Array.prototype.toString()`
+- `Array.prototype.toString()`  
   返回一个字符串，表示指定的数组及其元素
 
-- `Array.prototype.join()`
+- `Array.prototype.join()`  
   将数组转化为字符串，该方法可以传入分隔器作为元素之间的分隔。**返回一个所有数组元素连接的字符串，如果arr.length为0，则返回空字符串**
 
-- `Array.prototype.splice(开始位置，删除个数，元素)`
+- `Array.prototype.splice(开始位置，删除个数，元素)`  
   此方法通过删除或替换现有元素或者原地添加新的元素来修改数组。**改变原数组，返回一个以修改内容为元素的数组**
 
-- `Array.prototype.slice()`
+- `Array.prototype.slice()`  
  可以用来从数组中提取元素，参数 （截取开始位置的索引，截取结束位置的索引）。**不会改变原数组，返回一个含有被提取元素的新数组**
 
-- `Array.prototype.reverse()`
+- `Array.prototype.reverse()`  
   数组元素翻转。**改变原数组**
 
-- `Array.prototype.sort()`
+- `Array.prototype.sort()`  
   此方法用[原地算法](https://zh.wikipedia.org/wiki/%E5%8E%9F%E5%9C%B0%E7%AE%97%E6%B3%95)对数组的元素进行排序，并返回数组。默认排序是将元素转为字符串，然后在比较他们的UTF-16代码单元值序列。**无法保证排序的时间和空间复杂性。返回排序后的数组。注意，数组已原地排序，并且不进行复制。** 可接受一个比较函数(compareFunction(a,b))作为比较逻辑。比较逻辑如下：
   - 如果 compareFunction(a, b) 小于 0 ，那么 a 会被排列到 b 之前。
   - 如果 compareFunction(a, b) 等于 0 ， a 和 b 的相对位置不变。
