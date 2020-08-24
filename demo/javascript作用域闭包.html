@@ -60,7 +60,15 @@
     var bar = MyModules.get('bar');
     var foo = MyModules.get('foo');
     console.log(bar.hello('bobo'));
-    foo.awesome()
+    foo.awesome();
+    (function(){
+      var root = this;
+      var previousUnderscore = root._;
+      var _ = function(obj){
+        console.log('11')
+      }
+      console.log(root)
+    })()
   </script>
 </body>
 

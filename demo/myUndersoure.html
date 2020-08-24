@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>myUndersoure</title>
+</head>
+<body>
+  <script>
+    let obj = {
+      name: 'bobo'
+    }
+    !(function(){
+      var root = this;
+      console.log(root)
+    }.bind(obj))()
+  </script>
+</body>
+</html>
